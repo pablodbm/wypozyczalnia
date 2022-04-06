@@ -84,3 +84,75 @@ nav {
     padding: 5px 10px;
     font-size: 1.3rem;
 }
+
+.cars {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.car {
+    width: 400px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: 20px;
+}
+
+.car>p {
+    margin: 10px;
+}
+
+.car>h2 {
+    text-align: center;
+}
+
+.photo {
+    text-align: center;
+}
+
+.photo>img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.priceNButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priceNButton>p {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.button {
+    background-color: #557B83;
+    border: 1px solid #557B83;
+    width: 150px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    transition: all 0.3s;
+    float: right;
+}
+
+.button:hover {
+    border: 1px solid #557B83;
+    background-color: #fff;
+    color: #557B83;
+}
+
+.button:hover>a {
+    color: #557B83;
+}
+
+.button>a {
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}

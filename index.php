@@ -22,6 +22,64 @@
     <?php
     //wyswietlanie samochodów
     ?>
+    <div class="cars">
+        <div class="car">
+            <h2>Model: Fiat Bravo</h2>
+            <p>Rocznik: 2007</p>
+            <p>Moc: 96KM</p>
+            <div class="photo">
+                <img src="./upload/fiat.jpg" alt="fiat">
+            </div>
+            <div class="priceNButton">
+                <p>Cena: 150zł/dzień</p>            
+                <div class="button">
+                    <a href="./singleCar.php">Zarezerwuj</a>
+                </div>
+            </div>
+        </div>
+        <div class="car">
+            <h2>Model: Fiat Bravo</h2>
+            <p>Rocznik: 2007</p>
+            <p>Moc: 96KM</p>
+            <div class="photo">
+                <img src="./upload/fiat.jpg" alt="fiat">
+            </div>
+            <div class="priceNButton">
+                <p>Cena: 150zł/dzień</p>            
+                <div class="button">
+                    <a href="./singleCar.php">Zarezerwuj</a>
+                </div>
+            </div>
+        </div>
+        <div class="car">
+            <h2>Model: Fiat Bravo</h2>
+            <p>Rocznik: 2007</p>
+            <p>Moc: 96KM</p>
+            <div class="photo">
+                <img src="./upload/fiat.jpg" alt="fiat">
+            </div>
+            <div class="priceNButton">
+                <p>Cena: 150zł/dzień</p>            
+                <div class="button">
+                    <a href="./singleCar.php">Zarezerwuj</a>
+                </div>
+            </div>
+        </div>
+        <div class="car">
+            <h2>Model: Fiat Bravo</h2>
+            <p>Rocznik: 2007</p>
+            <p>Moc: 96KM</p>
+            <div class="photo">
+                <img src="./upload/fiat.jpg" alt="fiat">
+            </div>
+            <div class="priceNButton">
+                <p>Cena: 150zł/dzień</p>            
+                <div class="button">
+                    <a href="./singleCar.php">Zarezerwuj</a>
+                </div>
+            </div>
+        </div>
+    </div>
     </main>
     <footer>
 
