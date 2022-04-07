@@ -14,6 +14,9 @@ header {
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 2px solid black;
+    -webkit-box-shadow: 0px 18px 63px -28px rgba(105, 105, 105, 1);
+    -moz-box-shadow: 0px 18px 63px -28px rgba(105, 105, 105, 1);
+    box-shadow: 0px 18px 63px -28px rgba(105, 105, 105, 1);
 }
 
 .logo {
@@ -57,6 +60,11 @@ nav {
     font-size: 1.7rem;
 }
 
+.formBox>form {
+    display: flex;
+    flex-direction: row;
+}
+
 .inputBox,
 .submitBox {
     margin: 5px;
@@ -74,7 +82,8 @@ nav {
 }
 
 .submitBox {
-    justify-content: flex-end;
+    align-items: bottom;
+    margin-top: 13px;
 }
 
 .submitBox>input[type="submit"] {
@@ -82,7 +91,6 @@ nav {
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px 10px;
-    font-size: 1.3rem;
 }
 
 .cars {
@@ -98,6 +106,9 @@ nav {
     border: 1px solid black;
     border-radius: 15px;
     margin: 20px;
+    -webkit-box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
 }
 
 .car>p {
@@ -115,6 +126,9 @@ nav {
 .photo>img {
     width: 100%;
     border-radius: 10px;
+    -webkit-box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
 }
 
 .priceNButton {
@@ -160,4 +174,25 @@ nav {
 .rentformBox {
     display: flex;
     flex-direction: row;
+}
+
+.left {
+    width: 50%;
+}
+
+.left>h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.left>p {
+    padding: 10px;
+}
+
+.right {
+    width: 50%;
+}
+
+.singleCar>img {
+    width: 70%;
 }

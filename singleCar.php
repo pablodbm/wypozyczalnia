@@ -22,7 +22,7 @@
                 <h2>Model: Fiat Bravo</h2>
                 <p>Rocznik: 2007</p>
                 <p>Moc: 96KM</p>
-                <div class="photo">
+                <div class="photo singleCar">
                     <img src="./upload/fiat.jpg" alt="fiat">
                 </div>
             </div>
@@ -41,6 +41,7 @@
                         <input type="password" name="passwordRepeat">
                     </div>
                     <div class="submitBox">
+
                         <input type="submit" value="Zarejestruj się">
                     </div>
                 </form>
