@@ -90,7 +90,7 @@
                         <a href="./singleCar.php">Zarezerwuj</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </main>
     <footer>
