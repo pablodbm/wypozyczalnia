@@ -31,7 +31,35 @@
         //wyswietlanie samochodów
         ?>
         <div class="cars">
-            <div class="car">
+            <?php
+            require "./backend/db_connect.php";
+            $cars_query = "SELECT * FROM cars WHERE reserved=0";
+            $cars = $mysqli->query($cars_query);
+            $cars_fetched = $cars->fetch_all(MYSQLI_ASSOC);
+            foreach ($cars_fetched as $car) {
+                echo "<div class='car'>";
+                echo "<h2>Model: " . $car["model"] . "</h2>";
+                echo "<p>Rocznik: " . $car["year"] . "</p>";
+                echo "<p>Moc: " . $car["power"] . "</p>";
+                echo "<div class='photo'>";
+                echo "<img src='" . $car["photo"] . "' alt='fiat'>";
+                echo "</div>";
+                echo "<div class='priceNButton'>";
+                echo "<p>Cena: " . $car["price"] . "zł/dzień</p>";
+                echo "<div class='button'>";
+            ?>
+                <?php if (!isset($_SESSION["fullName"])) : ?>
+                    <a href="./loginForm.php">Zarezerwuj</a>
+                <?php else : ?>
+                    <a href="./singleCar.php">Zarezerwuj</a>
+                <?php endif; ?>
+            <?php
+                echo "</div>";
+                echo "</div>";
+                echo "</div>";
+            }
+            ?>
+            <!-- <div class="car">
                 <h2>Model: Fiat Bravo</h2>
                 <p>Rocznik: 2007</p>
                 <p>Moc: 96KM</p>
