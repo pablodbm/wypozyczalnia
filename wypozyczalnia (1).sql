@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Kwi 2022, 12:43
+-- Czas generowania: 07 Kwi 2022, 12:52
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.10
 
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Baza danych: `wypozyczalnia`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `cars`
+--
+
+DROP TABLE IF EXISTS `cars`;
+CREATE TABLE `cars` (
+  `id` int(11) NOT NULL,
+  `price` int(11) NOT NULL DEFAULT 150,
+  `model` text NOT NULL,
+  `year` text NOT NULL,
+  `power` int(11) NOT NULL,
+  `photo` text NOT NULL,
+  `reserved` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `cars`
+--
+
+INSERT INTO `cars` (`id`, `price`, `model`, `year`, `power`, `photo`, `reserved`) VALUES
+(1, 150, 'Fiat Bravo', '2007', 97, './upload/fiat.jpg', 0),
+(2, 150, 'Fiat Bravo', '2007', 97, './upload/fiat.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -48,6 +73,12 @@ INSERT INTO `users` (`id`, `fullName`, `login`, `password`, `user_type`) VALUES
 --
 
 --
+-- Indeksy dla tabeli `cars`
+--
+ALTER TABLE `cars`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `users`
 --
 ALTER TABLE `users`
@@ -56,6 +87,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT dla zrzuconych tabel
 --
+
+--
+-- AUTO_INCREMENT dla tabeli `cars`
+--
+ALTER TABLE `cars`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
