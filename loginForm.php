@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,15 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
-<div class="formBox">
+    <?php if (isset($_GET["bad_log"])) : ?>
+        <!-- do ostylowania -->
+        <div>zły login</div>
+    <?php endif; ?>
+    <div class="formBox">
         <h2>Logowanie</h2>
-        <form action="./backend/register.php" method="post">
+        <form action="./backend/login.php" method="post">
             <div class="inputBox">
                 <label for="login">Login:</label>
                 <input type="text" name="login">
@@ -26,4 +32,5 @@
         </form>
     </div>
 </body>
+
 </html>
