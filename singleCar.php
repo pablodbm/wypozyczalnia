@@ -20,31 +20,33 @@
         <div class="rentformBox">
             <div class="left">
                 <h2>Model: Fiat Bravo</h2>
-                <p>Rocznik: 2007</p>
-                <p>Moc: 96KM</p>
+
                 <div class="photo singleCar">
                     <img src="./upload/fiat.jpg" alt="fiat">
                 </div>
+                <div class="info">
+                                    <p>Rocznik: 2007</p>
+                <p>Moc: 96KM</p>
+                <p>Cena: 150zł/dzień</p>
+                </div>
+
             </div>
             <div class="right">
-                <form action="./backend/rentCarForm.php" method="post">
-                    <div class="inputBox">
-                        <label for="fullName">PESEL:</label>
-                        <input type="text" name="fullName" pattern="([0-9]{11})">
+                <?php
+                    
+                ?>
+                <div class="userInfo">
+                    <p>Imie: Paweł</p>
+                    <p>Nazwisko: Słota</p>
+                    <p>PESEL: 69696969696</p>
+                    <p>Ulica: Bosacka</p>
+                    <p>Numer mieszkania: 12/11</p>
+                    <p>Miasto: Kraków</p>
+                    <div class="button">
+                        <a href="./backend/reserveCar.php">Rezerwuj teraz</a>
                     </div>
-                    <div class="inputBox">
-                        <label for="fullName">Imię i nazwisko:</label>
-                        <input type="text" name="fullName">
-                    </div>
-                    <div class="inputBox">
-                        <label for="passwordRepeat">Powtórz hasło:</label>
-                        <input type="password" name="passwordRepeat">
-                    </div>
-                    <div class="submitBox">
+                </div>
 
-                        <input type="submit" value="Zarejestruj się">
-                    </div>
-                </form>
             </div>
         </div>
     </main>

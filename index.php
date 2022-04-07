@@ -51,7 +51,7 @@
                 <?php if (!isset($_SESSION["fullName"])) : ?>
                     <a href="./loginForm.php">Zarezerwuj</a>
                 <?php else : ?>
-                    <a href="./singleCar.php">Zarezerwuj</a>
+                    <a href="./singleCar.php?id=<?php echo $car['id'];?>">Zarezerwuj</a>
                 <?php endif; ?>
             <?php
                 echo "</div>";

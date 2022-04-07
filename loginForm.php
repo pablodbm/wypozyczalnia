@@ -18,7 +18,8 @@
     <div class="formBox">
         <h2>Logowanie</h2>
         <form action="./backend/login.php" method="post">
-            <div class="inputBox">
+            <div class="column">
+                            <div class="inputBox">
                 <label for="login">Login:</label>
                 <input type="text" name="login">
             </div>
@@ -29,6 +30,8 @@
             <div class="submitBox">
                 <input type="submit" value="Zarejestruj się">
             </div>
+            </div>
+
         </form>
     </div>
 </body>
