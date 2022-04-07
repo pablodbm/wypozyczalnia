@@ -59,66 +59,7 @@
                 echo "</div>";
             }
             ?>
-            <!-- <div class="car">
-                <h2>Model: Fiat Bravo</h2>
-                <p>Rocznik: 2007</p>
-                <p>Moc: 96KM</p>
-                <div class="photo">
-                    <img src="./upload/fiat.jpg" alt="fiat">
-                </div>
-                <div class="priceNButton">
-                    <p>Cena: 150zł/dzień</p>
-                    <div class="button">
-                        <?php if (!isset($_SESSION["fullName"])) : ?>
-                            <a href="./loginForm.php">Zarezerwuj</a>
-                        <?php else : ?>
-                            <a href="./singleCar.php">Zarezerwuj</a>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-            <div class="car">
-                <h2>Model: Fiat Bravo</h2>
-                <p>Rocznik: 2007</p>
-                <p>Moc: 96KM</p>
-                <div class="photo">
-                    <img src="./upload/fiat.jpg" alt="fiat">
-                </div>
-                <div class="priceNButton">
-                    <p>Cena: 150zł/dzień</p>
-                    <div class="button">
-                        <a href="./singleCar.php">Zarezerwuj</a>
-                    </div>
-                </div>
-            </div>
-            <div class="car">
-                <h2>Model: Fiat Bravo</h2>
-                <p>Rocznik: 2007</p>
-                <p>Moc: 96KM</p>
-                <div class="photo">
-                    <img src="./upload/fiat.jpg" alt="fiat">
-                </div>
-                <div class="priceNButton">
-                    <p>Cena: 150zł/dzień</p>
-                    <div class="button">
-                        <a href="./singleCar.php">Zarezerwuj</a>
-                    </div>
-                </div>
-            </div>
-            <div class="car">
-                <h2>Model: Fiat Bravo</h2>
-                <p>Rocznik: 2007</p>
-                <p>Moc: 96KM</p>
-                <div class="photo">
-                    <img src="./upload/fiat.jpg" alt="fiat">
-                </div>
-                <div class="priceNButton">
-                    <p>Cena: 150zł/dzień</p>
-                    <div class="button">
-                        <a href="./singleCar.php">Zarezerwuj</a>
-                    </div>
-                </div>
-            </div> -->
+
         </div>
     </main>
     <footer>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Kwi 2022, 12:20
+-- Czas generowania: 07 Kwi 2022, 12:43
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.10
 
@@ -24,28 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `cars`
---
-
-DROP TABLE IF EXISTS `cars`;
-CREATE TABLE `cars` (
-  `id` int(11) NOT NULL,
-  `model` text NOT NULL,
-  `year` text NOT NULL,
-  `power` int(11) NOT NULL,
-  `photo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Zrzut danych tabeli `cars`
---
-
-INSERT INTO `cars` (`id`, `model`, `year`, `power`, `photo`) VALUES
-(1, 'audi', 'a5', 0, './upload/624eb75c9f1ef.jpg');
-
--- --------------------------------------------------------
-
---
 -- Struktura tabeli dla tabeli `users`
 --
 
@@ -54,25 +32,20 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `fullName` text NOT NULL,
   `login` text NOT NULL,
-  `password` text NOT NULL
+  `password` text NOT NULL,
+  `user_type` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Zrzut danych tabeli `users`
 --
 
-INSERT INTO `users` (`id`, `fullName`, `login`, `password`) VALUES
-(3, 'Paweł Słota', 'pawelek212003', '123');
+INSERT INTO `users` (`id`, `fullName`, `login`, `password`, `user_type`) VALUES
+(3, 'Paweł Słota', 'pawelek212003', '123', 0);
 
 --
 -- Indeksy dla zrzutów tabel
 --
-
---
--- Indeksy dla tabeli `cars`
---
-ALTER TABLE `cars`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeksy dla tabeli `users`
@@ -83,12 +56,6 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT dla zrzuconych tabel
 --
-
---
--- AUTO_INCREMENT dla tabeli `cars`
---
-ALTER TABLE `cars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
