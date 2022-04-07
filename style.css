@@ -156,3 +156,8 @@ nav {
     text-decoration: none;
     color: black;
 }
+
+.rentformBox {
+    display: flex;
+    flex-direction: row;
+}

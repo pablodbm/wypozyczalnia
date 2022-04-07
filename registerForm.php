@@ -28,6 +28,26 @@
                 <label for="passwordRepeat">Powtórz hasło:</label>
                 <input type="password" name="passwordRepeat">
             </div>
+            <div class="inputBox">
+                <label for="birthDate">Data urodzenia:</label>
+                <input type="date" name="birthDate">
+            </div>
+            <div class="inputBox">
+                <label for="pesel">PESEL:</label>
+                <input type="text" name="pesel" pattern="([0-9]{11})">
+            </div>
+            <div class="inputBox">
+                <label for="street">Ulica:</label>
+                <input type="text" name="street">
+            </div>
+            <div class="inputBox">
+                <label for="buildingNumber">Numer budynku:</label>
+                <input type="text" name="buildingNumber">
+            </div>
+            <div class="inputBox">
+                <label for="city">Miasto:</label>
+                <input type="text" name="city">
+            </div>
             <div class="submitBox">
                 <input type="submit" value="Zarejestruj się">
             </div>
