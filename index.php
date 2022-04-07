@@ -22,6 +22,7 @@
                 <div class="menuElement"><a href="./registerForm.php">Rejestracja</a></div>
             <?php else : ?>
                 <div class="menuElement"><a href="">Moje konto</a></div>
+                <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
             <?php endif; ?>
         </nav>
     </header>
@@ -40,7 +41,11 @@
                 <div class="priceNButton">
                     <p>Cena: 150zł/dzień</p>
                     <div class="button">
-                        <a href="./singleCar.php">Zarezerwuj</a>
+                        <?php if (!isset($_SESSION["fullName"])) : ?>
+                            <a href="./loginForm.php">Zarezerwuj</a>
+                        <?php else : ?>
+                            <a href="./singleCar.php">Zarezerwuj</a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
