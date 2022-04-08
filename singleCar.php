@@ -52,6 +52,8 @@
                     $imie = $user_data["fullName"];
                     // echo $imie;
                     $imie = explode(" ", $user_data["fullName"]);
+                    $user_id = $user_data["id"];
+                    $car_id = $_GET["id"];
                     ?>
                     <div class="userInfo">
                         <p>Imie: <?php echo $imie[0] ?></p>
@@ -61,7 +63,7 @@
                         <p>Numer mieszkania: <?php echo $user_data["buildingNumber"] ?></p>
                         <p>Miasto: <?php echo $user_data["city"] ?></p>
                         <div class="button">
-                            <a href="./backend/reserveCar.php">Rezerwuj teraz</a>
+                            <a href="./backend/reserveCar.php?user_id=<?php echo $user_id ?>&car_id=<?php echo $car_id ?>">Rezerwuj teraz</a>
                         </div>
                     </div>
 
