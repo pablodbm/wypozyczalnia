@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 08 Kwi 2022, 12:43
--- Wersja serwera: 10.4.20-MariaDB
--- Wersja PHP: 8.0.9
+-- Czas generowania: 08 Kwi 2022, 16:49
+-- Wersja serwera: 10.4.14-MariaDB
+-- Wersja PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,8 +43,29 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`id`, `price`, `model`, `year`, `power`, `photo`, `reserved`) VALUES
-(2, 150, 'Fiat Bravo', '2007', 97, './upload/fiat.jpg', 0),
+(2, 150, 'Fiat Bravo', '2007', 97, './upload/fiat.jpg', 1),
 (4, 150, 'Bmw', '2000', 150, './upload/625000f419ea8.jpg', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `rentals`
+--
+
+DROP TABLE IF EXISTS `rentals`;
+CREATE TABLE `rentals` (
+  `id` int(11) NOT NULL,
+  `car_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `rentals`
+--
+
+INSERT INTO `rentals` (`id`, `car_id`, `user_id`) VALUES
+(1, 2, 5),
+(2, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -88,13 +109,19 @@ ALTER TABLE `cars`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeksy dla tabeli `rentals`
+--
+ALTER TABLE `rentals`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT dla zrzuconych tabel
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
@@ -102,6 +129,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `cars`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT dla tabeli `rentals`
+--
+ALTER TABLE `rentals`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
