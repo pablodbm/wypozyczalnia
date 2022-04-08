@@ -52,15 +52,8 @@
                     <input type="submit" value="Dodaj">
                 </div>
             </div>
-
         </form>
     </div>
-    <?php
-    require "./backend/db_connect.php";
-    $select_workers = "SELECT * FROM users WHERE user_type=1";
-    $result = $mysqli->query($select_workers);
-
-    ?>
 </body>
 
 </html>
