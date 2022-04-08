@@ -66,6 +66,12 @@ nav {
     text-align: center;
 }
 
+.panel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .formBox>h2 {
     margin-bottom: 15px;
     font-size: 1.7rem;
