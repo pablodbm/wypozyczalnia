@@ -36,18 +36,25 @@
         <input type="text" name="power" id="">
         <input type="file" name="file" accept="image/png,image/jpeg">
         <input type="submit" value="dodaj furmanke">
-
     </form>
 
-    <?php if ($_SESSION["user_type"] == 2) : ?>
-        <h1>Dodanie pracownika</h1>
-        <form action="./backend/add_employee.php" method="post">
-            <input type="text" name="fullName" id="">
-            <input type="text" name="login" id="">
-            <input type="password" name="password" id="">
-            <input type="submit" value="dodaj pracownika">
-        </form>
-    <?php endif ?>
+    <div class="add_employee">
+        <?php if ($_SESSION["user_type"] == 2) : ?>
+            <h1>Dodanie pracownika</h1>
+            <form action="./backend/add_employee.php" method="post">
+                <input type="text" name="fullName" id="">
+                <input type="text" name="login" id="">
+                <input type="password" name="password" id="">
+                <input type="submit" value="dodaj pracownika">
+            </form>
+        <?php endif ?>
+    </div>
+    <?php
+    require "./backend/db_connect.php";
+    $select_workers = "SELECT * FROM users WHERE user_type=1";
+    $result = $mysqli->query($select_workers);
+
+    ?>
 </body>
 
 </html>
