@@ -28,14 +28,9 @@
         </div>
         <nav>
             <div class="menuElement"><a href="./index.php">Strona główna</a></div>
-<<<<<<< HEAD
-            <?php if (isset($_SESSION["user_type"])&&$_SESSION["user_type"] == 2) : ?>
-            <div class="menuElement"><a href="./adminUsers.php">Zarządzanie pracownikami</a></div>
-=======
             <div class="menuElement"><a href="./addCar.php">Dodawanie auta</a></div>
             <?php if (isset($_SESSION["user_type"]) && $_SESSION["user_type"] == 2) : ?>
                 <div class="menuElement"><a href="./adminUsers.php">Zarządzanie pracownikami</a></div>
->>>>>>> e794938c0bf26823695ce1d09d05952c081a1bc5
             <?php endif ?>
             <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
         </nav>
@@ -66,9 +61,6 @@
             </div>
         </form>
     </div>
-<<<<<<< HEAD
-
-=======
     <div class="wypierdolenieFurmanki">
         <table>
             <?php
@@ -99,7 +91,6 @@
         </table>
         <form action=""></form>
     </div>
->>>>>>> e794938c0bf26823695ce1d09d05952c081a1bc5
 </body>
 
 </html>
