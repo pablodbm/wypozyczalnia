@@ -35,62 +35,72 @@
             <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
         </nav>
     </header>
-    <div class="formBox admin">
-        <h2>Dodawanie auta</h2>
-        <form action="./backend/addCar.php" method="post">
-            <div class="column">
-                <div class="inputBox">
-                    <label for="model">Model:</label>
-                    <input type="text" name="model">
+    <div class="panel">
+        <div class="formBox admin">
+            <h2>Dodawanie auta</h2>
+            <form action="./backend/addCar.php" method="post">
+                <div class="column">
+                    <div class="inputBox">
+                        <label for="model">Model:</label>
+                        <input type="text" name="model">
+                    </div>
+                    <div class="inputBox">
+                        <label for="year">Rocznik:</label>
+                        <input type="text" name="year" pattern="([0-9]{4})">
+                    </div>
+                    <div class="inputBox">
+                        <label for="power">Moc:</label>
+                        <input type="text" name="power">
+                    </div>
+                    <div class="inputBox">
+                        <label for="photo">Zdjęcie:</label>
+                        <input type="file" name="photo">
+                    </div>
+                    <div class="submitBox">
+                        <input type="submit" value="Dodaj">
+                    </div>
                 </div>
-                <div class="inputBox">
-                    <label for="year">Rocznik:</label>
-                    <input type="text" name="year" pattern="([0-9]{4})">
-                </div>
-                <div class="inputBox">
-                    <label for="power">Moc:</label>
-                    <input type="text" name="power">
-                </div>
-                <div class="inputBox">
-                    <label for="photo">Zdjęcie:</label>
-                    <input type="file" name="photo">
-                </div>
-                <div class="submitBox">
-                    <input type="submit" value="Dodaj">
-                </div>
-            </div>
-        </form>
-    </div>
-    <div class="wypierdolenieFurmanki">
-        <table>
-            <?php
-            require "./backend/db_connect.php";
-            $all_cars = "SELECT * FROM CARS";
-            $cars_result = $mysqli->query($all_cars);
-            if ($cars_result->num_rows == 0) {
-                echo "<div>Brak samochodów</div>";
-            } else {
-                $cars_result->fetch_all(MYSQLI_ASSOC);
-                foreach ($cars_result as $car) {
-                    echo "<tr>";
+            </form>
+        </div>
+        <div class="deletingCar">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Rocznik</th>
+                        <th>Moc</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <?php
+                require "./backend/db_connect.php";
+                $all_cars = "SELECT * FROM CARS";
+                $cars_result = $mysqli->query($all_cars);
+                if ($cars_result->num_rows == 0) {
+                    echo "<div>Brak samochodów</div>";
+                } else {
+                    $cars_result->fetch_all(MYSQLI_ASSOC);
+                    foreach ($cars_result as $car) {
+                        echo "<tr>";
 
-                    echo "<td>" . $car["model"] . "</td>";
-                    echo "<td>" . $car["year"] . "</td>";
-                    echo "<td>" . $car["power"] . "</td>";
-                    echo "<td style='display:none'>" . $car["id"] . "</td>";
-                    echo "<td>";
-                    echo "<form action='#' method='POST'>";
-                    echo "<input type=text name='id' value='" . $car["id"] . "' hidden>";
-                    echo "<input type='submit' value='usun auto' name='deleteCar'>";
-                    echo "</form>";
-                    echo "</td>";
-                    echo "</tr>";
+                        echo "<td>" . $car["model"] . "</td>";
+                        echo "<td>" . $car["year"] . "</td>";
+                        echo "<td>" . $car["power"] . "</td>";
+                        echo "<td style='display:none'>" . $car["id"] . "</td>";
+                        echo "<td>";
+                        echo "<form action='#' method='POST'>";
+                        echo "<input type=text name='id' value='" . $car["id"] . "' hidden>";
+                        echo "<input type='submit' value='Usuń auto' class='delete'name='deleteCar'>";
+                        echo "</form>";
+                        echo "</td>";
+                        echo "</tr>";
+                    }
                 }
-            }
-            ?>
-        </table>
-        <form action=""></form>
+                ?>
+            </table>
+        </div>
     </div>
+    
 </body>
 
 </html>
