@@ -22,8 +22,8 @@
         <nav>
             <div class="menuElement"><a href="./index.php">Strona główna</a></div>
             <div class="menuElement"><a href="./addCar.php">Dodawanie auta</a></div>
-            <?php if (isset($_SESSION["user_type"])&&$_SESSION["user_type"] == 2) : ?>
-            <div class="menuElement"><a href="./addEmployee.php">Dodawanie pracownika</a></div>
+            <?php if (isset($_SESSION["user_type"]) && $_SESSION["user_type"] == 2) : ?>
+                <div class="menuElement"><a href="./admin_users.php">Zarządzanie pracownikami</a></div>
             <?php endif ?>
             <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
         </nav>
@@ -36,23 +36,6 @@
         <input type="submit" value="dodaj furmanke">
     </form>
 
-    <div class="add_employee">
-        <?php if ($_SESSION["user_type"] == 2) : ?>
-            <h1>Dodanie pracownika</h1>
-            <form action="./backend/add_employee.php" method="post">
-                <input type="text" name="fullName" id="">
-                <input type="text" name="login" id="">
-                <input type="password" name="password" id="">
-                <input type="submit" value="dodaj pracownika">
-            </form>
-        <?php endif ?>
-    </div>
-    <?php
-    require "./backend/db_connect.php";
-    $select_workers = "SELECT * FROM users WHERE user_type=1";
-    $result = $mysqli->query($select_workers);
-
-    ?>
 </body>
 
 </html>
