@@ -28,15 +28,25 @@
             <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
         </nav>
     </header>
-    <form action="./backend/addCar.php" method="POST" enctype="multipart/form-data">
-        <input type="text" name="model" id="">
-        <input type="text" name="year" id="">
-        <input type="text" name="power" id="">
-        <input type="file" name="file" accept="image/png,image/jpeg">
-        <input type="submit" value="dodaj furmanke">
+    <div class="formBox">
+        <h2>Dodawanie auta</h2>
+        <form action="./backend/addCar.php" method="post">
+            <div class="column">
+                <div class="inputBox">
+                    <label for="login">Login:</label>
+                    <input type="text" name="login">
+                </div>
+                <div class="inputBox">
+                    <label for="password">Hasło:</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="submitBox">
+                    <input type="submit" value="Zaloguj się">
+                </div>
+            </div>
 
-    </form>
-
+        </form>
+    </div>
     <?php if ($_SESSION["user_type"] == 2) : ?>
         <h1>Dodanie pracownika</h1>
         <form action="./backend/add_employee.php" method="post">
