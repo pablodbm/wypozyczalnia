@@ -11,7 +11,7 @@
 
 <body>
     <?php session_start() ?>
-    <?php if ($_SESSION["user_type"] == 0) {
+    <?php if (!isset($_SESSION["user_type"]) || $_SESSION["user_type"] == 0) {
         header("Location:./index.php");
     }
     ?>
@@ -21,13 +21,11 @@
         </div>
         <nav>
             <div class="menuElement"><a href="./index.php">Strona główna</a></div>
-            <?php if (!isset($_SESSION["fullName"])) : ?>
-                <div class="menuElement"><a href="./loginForm.php">Logowanie</a></div>
-                <div class="menuElement"><a href="./registerForm.php">Rejestracja</a></div>
-            <?php else : ?>
-                <div class="menuElement"><a href="">Moje konto</a></div>
-                <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
-            <?php endif; ?>
+            <div class="menuElement"><a href="./addCar.php">Dodawanie auta</a></div>
+            <?php if (isset($_SESSION["user_type"])&&$_SESSION["user_type"] == 2) : ?>
+            <div class="menuElement"><a href="./addEmployee.php">Dodawanie pracownika</a></div>
+            <?php endif ?>
+            <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
         </nav>
     </header>
     <form action="./backend/addCar.php" method="POST" enctype="multipart/form-data">
