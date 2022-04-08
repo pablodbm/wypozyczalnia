@@ -247,3 +247,12 @@ nav {
 .userInfo>.button {
     float: left;
 }
+
+.success {
+    color: darkgreen;
+    font-size: 0.9rem;
+}
+
+.declined {
+    color: red;
+}
