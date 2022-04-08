@@ -17,6 +17,9 @@
         </div>
         <nav>
             <div class="menuElement"><a href="./index.php">Strona główna</a></div>
+            <?php if (isset($_SESSION["user_type"]) && $_SESSION["user_type"] != 0) : ?>
+                <div class="menuElement"><a href="./adminPanel.php">Panel administratora</a></div>
+            <?php endif ?>
             <?php if (!isset($_SESSION["fullName"])) : ?>
                 <div class="menuElement"><a href="./loginForm.php">Logowanie</a></div>
                 <div class="menuElement"><a href="./registerForm.php">Rejestracja</a></div>

@@ -28,34 +28,31 @@
             <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
         </nav>
     </header>
-    <div class="formBox">
-        <h2>Dodawanie auta</h2>
-        <form action="./backend/addCar.php" method="post">
-            <div class="column">
-                <div class="inputBox">
-                    <label for="login">Login:</label>
-                    <input type="text" name="login">
-                </div>
-                <div class="inputBox">
-                    <label for="password">Hasło:</label>
-                    <input type="password" name="password">
-                </div>
-                <div class="submitBox">
-                    <input type="submit" value="Zaloguj się">
-                </div>
-            </div>
+    <form action="./backend/addCar.php" method="POST" enctype="multipart/form-data">
+        <input type="text" name="model" id="">
+        <input type="text" name="year" id="">
+        <input type="text" name="power" id="">
+        <input type="file" name="file" accept="image/png,image/jpeg">
+        <input type="submit" value="dodaj furmanke">
+    </form>
 
-        </form>
+    <div class="add_employee">
+        <?php if ($_SESSION["user_type"] == 2) : ?>
+            <h1>Dodanie pracownika</h1>
+            <form action="./backend/add_employee.php" method="post">
+                <input type="text" name="fullName" id="">
+                <input type="text" name="login" id="">
+                <input type="password" name="password" id="">
+                <input type="submit" value="dodaj pracownika">
+            </form>
+        <?php endif ?>
     </div>
-    <?php if ($_SESSION["user_type"] == 2) : ?>
-        <h1>Dodanie pracownika</h1>
-        <form action="./backend/add_employee.php" method="post">
-            <input type="text" name="fullName" id="">
-            <input type="text" name="login" id="">
-            <input type="password" name="password" id="">
-            <input type="submit" value="dodaj pracownika">
-        </form>
-    <?php endif ?>
+    <?php
+    require "./backend/db_connect.php";
+    $select_workers = "SELECT * FROM users WHERE user_type=1";
+    $result = $mysqli->query($select_workers);
+
+    ?>
 </body>
 
 </html>
