@@ -24,7 +24,7 @@
                 <div class="menuElement"><a href="./loginForm.php">Logowanie</a></div>
                 <div class="menuElement"><a href="./registerForm.php">Rejestracja</a></div>
             <?php else : ?>
-                <div class="menuElement"><a href="">Moje konto</a></div>
+                <div class="menuElement"><a href="./myAccount.php">Moje konto</a></div>
                 <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
             <?php endif; ?>
         </nav>
@@ -37,6 +37,7 @@
             <?php
             require "./backend/db_connect.php";
             $cars_query = "SELECT * FROM cars WHERE reserved=0";
+            //zapytanie - wybór z rezerwacji
             $cars = $mysqli->query($cars_query);
             $cars_fetched = $cars->fetch_all(MYSQLI_ASSOC);
             foreach ($cars_fetched as $car) {

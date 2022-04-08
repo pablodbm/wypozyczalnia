@@ -13,20 +13,11 @@
 <body>
     <header>
         <div class="logo">
-            <h1>Wypożyczalnia</h1>
+            <h1>Moje rezerwacje</h1>
         </div>
         <nav>
             <div class="menuElement"><a href="./index.php">Strona główna</a></div>
-            <?php if (isset($_SESSION["user_type"]) && $_SESSION["user_type"] != 0) : ?>
-                <div class="menuElement"><a href="./adminPanel.php">Panel administratora</a></div>
-            <?php endif ?>
-            <?php if (!isset($_SESSION["fullName"])) : ?>
-                <div class="menuElement"><a href="./loginForm.php">Logowanie</a></div>
-                <div class="menuElement"><a href="./registerForm.php">Rejestracja</a></div>
-            <?php else : ?>
-                <div class="menuElement"><a href="">Moje konto</a></div>
-                <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
-            <?php endif; ?>
+            <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
         </nav>
     </header>
     <main>
@@ -48,13 +39,13 @@
                 echo "<img src='" . $car["photo"] . "' alt='fiat'>";
                 echo "</div>";
                 echo "<div class='priceNButton'>";
-                echo "<p>Cena: " . $car["price"] . "zł/dzień</p>";
+                echo "<p>Aktualny koszt: " . $car["price"] . "zł</p>"; // wyliczanie kosztów na podstawie ceny i długości wypożyczenia
                 echo "<div class='button'>";
             ?>
                 <?php if (!isset($_SESSION["fullName"])) : ?>
                     <a href="./loginForm.php">Zarezerwuj</a>
                 <?php else : ?>
-                    <a href="./singleCar.php?id=<?php echo $car['id']; ?>">Zarezerwuj</a>
+                    <a href="./singleCar.php?id=<?php echo $car['id']; ?>">Oddaj i zapłać</a>
                 <?php endif; ?>
             <?php
                 echo "</div>";
