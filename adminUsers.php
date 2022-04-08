@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -30,7 +30,7 @@
         <div class="formBox admin">
             <h2>Dodawanie pracownika</h2>
             <form action="./backend/addEmployee.php" method="post">
-                <div class="column">            
+                <div class="column">
                     <div class="inputBox">
                         <label for="fullName">Imię i nazwisko:</label>
                         <input type="text" name="fullName">
@@ -48,9 +48,9 @@
                         <input type="password" name="passwordRepeat">
                     </div>
                     <div class="submitBox">
-                    <label for="" style="visibility: hidden;">Submit</label>
-                    <input type="submit" value="Dodaj">
-                </div>
+                        <label for="" style="visibility: hidden;">Submit</label>
+                        <input type="submit" value="Dodaj">
+                    </div>
                 </div>
                 <div class="column">
                     <div class="inputBox">
@@ -78,31 +78,32 @@
         </div>
         <div class="formBox admin">
             <h2>Usuwanie pracownika</h2>
-            <form action="./backend/login.php" method="post">
+            <form action="./backend/deleteEmployee.php" method="post">
                 <div class="column">
                     <div class="inputBox">
                         <label for="login">Wybierz pracownika:</label>
                         <select name="employee" id="">
-                    <?php
-                    require "./backend/db_connect.php";
-                    $select_workers = "SELECT * FROM users WHERE user_type=1";
-                    $result = $mysqli->query($select_workers);
-                    $make_options = false;
-                    if ($result->num_rows == 0) {
-                        $result = $result->fetch_assoc();
-                        $make_options = true;
-                    } else if ($result->num_rows > 0) {
-                        $result->fetch_all(MYSQLI_ASSOC);
-                        $make_options = true;
-                    } else {
-                        echo "<div class='brak_pracownikow'>Brak pracowników</div>";
-                    }
-                    if ($make_options == true) {
-                        foreach ($result as $single) {
-                            echo "<option value='" . $single["id"] . "'>" . $single["fullName"] . "</option>";
-                        }
-                    }
-                    ?> </select>
+                            <?php
+                            require "./backend/db_connect.php";
+                            $select_workers = "SELECT * FROM users WHERE user_type=1";
+                            $result = $mysqli->query($select_workers);
+                            $make_options = false;
+
+                            if ($result->num_rows == 0) {
+                                $result = $result->fetch_assoc();
+                                $make_options = true;
+                            } else if ($result->num_rows > 0) {
+                                $result->fetch_all(MYSQLI_ASSOC);
+                                $make_options = true;
+                            } else {
+                                echo "<div class='brak_pracownikow'>Brak pracowników</div>";
+                            }
+                            if ($make_options == true) {
+                                foreach ($result as $single) {
+                                    echo "<option value='" . $single["id"] . "'>" . $single["fullName"] . "</option>";
+                                }
+                            }
+                            ?> </select>
                     </div>
                     <div class="submitBox">
                         <input type="submit" value="Usuń">
@@ -112,7 +113,7 @@
             </form>
         </div>
     </div>
-    
+
 </body>
 
 </html>
