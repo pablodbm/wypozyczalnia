@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -14,7 +15,21 @@
         header("Location:./index.php");
     }
     ?>
-    <h1>dodanie furmanki</h1>
+    <header>
+        <div class="logo">
+            <h1>Wypożyczalnia</h1>
+        </div>
+        <nav>
+            <div class="menuElement"><a href="./index.php">Strona główna</a></div>
+            <?php if (!isset($_SESSION["fullName"])) : ?>
+                <div class="menuElement"><a href="./loginForm.php">Logowanie</a></div>
+                <div class="menuElement"><a href="./registerForm.php">Rejestracja</a></div>
+            <?php else : ?>
+                <div class="menuElement"><a href="">Moje konto</a></div>
+                <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
+            <?php endif; ?>
+        </nav>
+    </header>
     <form action="./backend/addCar.php" method="POST" enctype="multipart/form-data">
         <input type="text" name="model" id="">
         <input type="text" name="year" id="">

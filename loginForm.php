@@ -33,7 +33,7 @@
                     <input type="password" name="password">
                 </div>
                 <div class="submitBox">
-                    <input type="submit" value="Zarejestruj się">
+                    <input type="submit" value="Zaloguj się">
                 </div>
             </div>
 
