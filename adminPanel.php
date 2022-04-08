@@ -23,29 +23,37 @@
             <div class="menuElement"><a href="./index.php">Strona główna</a></div>
             <div class="menuElement"><a href="./addCar.php">Dodawanie auta</a></div>
             <?php if (isset($_SESSION["user_type"])&&$_SESSION["user_type"] == 2) : ?>
-            <div class="menuElement"><a href="./addEmployee.php">Dodawanie pracownika</a></div>
+            <div class="menuElement"><a href="./addEmployee.php">Zarządzanie pracownikami</a></div>
             <?php endif ?>
             <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
         </nav>
     </header>
-    <form action="./backend/addCar.php" method="POST" enctype="multipart/form-data">
-        <input type="text" name="model" id="">
-        <input type="text" name="year" id="">
-        <input type="text" name="power" id="">
-        <input type="file" name="file" accept="image/png,image/jpeg">
-        <input type="submit" value="dodaj furmanke">
-    </form>
+    <div class="formBox admin">
+        <h2>Dodawanie auta</h2>
+        <form action="./backend/addCar.php" method="post">
+            <div class="column">
+                <div class="inputBox">
+                    <label for="model">Model:</label>
+                    <input type="text" name="model">
+                </div>
+                <div class="inputBox">
+                    <label for="year">Rocznik:</label>
+                    <input type="text" name="year" pattern="([0-9]{4})">
+                </div>
+                <div class="inputBox">
+                    <label for="power">Moc:</label>
+                    <input type="text" name="power">
+                </div>
+                <div class="inputBox">
+                    <label for="photo">Zdjęcie:</label>
+                    <input type="file" name="photo">
+                </div>
+                <div class="submitBox">
+                    <input type="submit" value="Dodaj">
+                </div>
+            </div>
 
-    <div class="add_employee">
-        <?php if ($_SESSION["user_type"] == 2) : ?>
-            <h1>Dodanie pracownika</h1>
-            <form action="./backend/add_employee.php" method="post">
-                <input type="text" name="fullName" id="">
-                <input type="text" name="login" id="">
-                <input type="password" name="password" id="">
-                <input type="submit" value="dodaj pracownika">
-            </form>
-        <?php endif ?>
+        </form>
     </div>
     <?php
     require "./backend/db_connect.php";

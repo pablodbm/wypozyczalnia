@@ -55,6 +55,17 @@ nav {
     height: 100vh;
 }
 
+.admin {
+    height: 500px !important;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.admin>h2 {
+    text-align: center;
+}
+
 .formBox>h2 {
     margin-bottom: 15px;
     font-size: 1.7rem;
