@@ -40,7 +40,7 @@
                 echo "<div class='car'>";
                 echo "<h2>Model: " . $car["model"] . "</h2>";
                 echo "<p>Rocznik: " . $car["year"] . "</p>";
-                echo "<p>Moc: " . $car["power"] . "</p>";
+                echo "<p>Moc: " . $car["power"] . " hp" . "</p>";
                 echo "<div class='photo'>";
                 echo "<img src='" . $car["photo"] . "' alt='fiat'>";
                 echo "</div>";
@@ -51,7 +51,7 @@
                 <?php if (!isset($_SESSION["fullName"])) : ?>
                     <a href="./loginForm.php">Zarezerwuj</a>
                 <?php else : ?>
-                    <a href="./singleCar.php?id=<?php echo $car['id'];?>">Zarezerwuj</a>
+                    <a href="./singleCar.php?id=<?php echo $car['id']; ?>">Zarezerwuj</a>
                 <?php endif; ?>
             <?php
                 echo "</div>";

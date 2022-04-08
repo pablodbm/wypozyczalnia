@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 07 Kwi 2022, 12:52
--- Wersja serwera: 10.4.21-MariaDB
--- Wersja PHP: 8.0.10
+-- Czas generowania: 08 Kwi 2022, 11:34
+-- Wersja serwera: 10.4.20-MariaDB
+-- Wersja PHP: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,7 +44,8 @@ CREATE TABLE `cars` (
 
 INSERT INTO `cars` (`id`, `price`, `model`, `year`, `power`, `photo`, `reserved`) VALUES
 (1, 150, 'Fiat Bravo', '2007', 97, './upload/fiat.jpg', 0),
-(2, 150, 'Fiat Bravo', '2007', 97, './upload/fiat.jpg', 0);
+(2, 150, 'Fiat Bravo', '2007', 97, './upload/fiat.jpg', 0),
+(4, 150, 'Bmw', '2000', 150, './upload/625000f419ea8.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -58,6 +59,11 @@ CREATE TABLE `users` (
   `fullName` text NOT NULL,
   `login` text NOT NULL,
   `password` text NOT NULL,
+  `birthDate` text NOT NULL,
+  `pesel` text NOT NULL,
+  `street` text NOT NULL,
+  `buildingNumber` text NOT NULL,
+  `city` text NOT NULL,
   `user_type` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -65,8 +71,10 @@ CREATE TABLE `users` (
 -- Zrzut danych tabeli `users`
 --
 
-INSERT INTO `users` (`id`, `fullName`, `login`, `password`, `user_type`) VALUES
-(3, 'Paweł Słota', 'pawelek212003', '123', 0);
+INSERT INTO `users` (`id`, `fullName`, `login`, `password`, `birthDate`, `pesel`, `street`, `buildingNumber`, `city`, `user_type`) VALUES
+(3, 'Paweł Słota', 'pawelek212003', '123', '', '', '', '', '', 0),
+(4, 'Kacper Przełozny', 'kapri', 'kapri', '2022-04-19', '12345678912', 'Beblo', '69', 'Brak', 0),
+(5, 'admin', 'admin', 'admin', '', '', '', '', '', 2);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -92,13 +100,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
