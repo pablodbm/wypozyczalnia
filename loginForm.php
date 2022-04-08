@@ -11,14 +11,7 @@
 </head>
 
 <body>
-    <?php if (isset($_GET["bad_log"])) : ?>
-        <!-- do ostylowania -->
-        <div>zły login</div>
-    <?php endif; ?>
-    <?php if (isset($_GET["register"])) : ?>
-        <!-- do ostylowania -->
-        <div>dokonano rejestracji mozesz sie zalogowac</div>
-    <?php endif; ?>
+
 
     <div class="formBox">
         <h2>Logowanie</h2>
@@ -35,6 +28,14 @@
                 <div class="submitBox">
                     <input type="submit" value="Zaloguj się">
                 </div>
+                <?php if (isset($_GET["bad_log"])) : ?>
+                    <!-- do ostylowania -->
+                    <p class="declined">Nieprawidłowy login</p>
+                <?php endif; ?>
+                <?php if (isset($_GET["register"])) : ?>
+                    <!-- do ostylowania -->
+                    <p class="success">Udało się zarejestrować.<br/>Możesz się zalogować</p>
+                <?php endif; ?>
             </div>
 
         </form>
