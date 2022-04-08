@@ -15,7 +15,7 @@ if (mysqli_num_rows($result) == 0) {
     $result = $result->fetch_assoc();
     $_SESSION["fullName"] = $result["fullName"];
     $_SESSION["id"] = $result["id"];
-    $_SESSION["type"] = $result["user_type"];
+    $_SESSION["user_type"] = $result["user_type"];
     $_SESSION["user_data"] = json_encode($result);
     header("Location:../index.php");
 }
