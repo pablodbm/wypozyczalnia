@@ -21,6 +21,6 @@ if (!file_exists($target_file)) {
 }
 $path_to_photo = substr($target_file, 1);
 
-$add_car = "INSERT INTO cars (price,model,year,power,photo) VALUES ('$price','$model','$year','$power','$path_to_photo')";
+$add_car = "INSERT INTO cars (price,model,year,power,photo) VALUES ($price,'$model','$year','$power','$path_to_photo')";
 $mysqli->query($add_car);
 header("Location:../index.php");
