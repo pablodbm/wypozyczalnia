@@ -1,11 +1,14 @@
 <?php
 
-$user = "root";
-$db_name = "wypozyczalnia";
-$password ="";
 $host = "localhost";
-$mysqli = new mysqli($host,$user,$password,$db_name);
+$user = "root";
+$pass = "";
+$db_name = "wypozyczalnia";
+
+$mysqli = new mysqli($host, $user, $pass, $db_name);
 if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: " . $mysqli->connect_error;
     exit();
+} else {
+    // echo "dziala";
 }

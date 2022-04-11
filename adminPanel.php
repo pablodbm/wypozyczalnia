@@ -38,7 +38,7 @@
     <div class="panel">
         <div class="formBox admin">
             <h2>Dodawanie auta</h2>
-            <form action="./backend/addCar.php" method="post">
+            <form action="./backend/addCar.php" method="post" enctype="multipart/form-data">
                 <div class="column">
                     <div class="inputBox">
                         <label for="model">Model:</label>
@@ -100,7 +100,7 @@
             </table>
         </div>
     </div>
-    
+
 </body>
 
 </html>
