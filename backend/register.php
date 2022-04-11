@@ -11,14 +11,12 @@ $street = mysqli_real_escape_string($mysqli, $_POST["street"]);
 $buildingNumber = mysqli_real_escape_string($mysqli, $_POST["buildingNumber"]);
 $city = mysqli_real_escape_string($mysqli, $_POST["city"]);
 
-echo var_dump($_POST);
 $query = "SELECT * FROM users WHERE login='$login'";
 $result = $mysqli->query($query);
 
 $num_rows = mysqli_num_rows($result);
 if ($num_rows > 0) {
     $_SESSION["login_w_bazie"] = 0;
-    // header("Location:./register_site.php");
 } else {
     $query = "INSERT INTO users (fullName,login,password,birthDate,pesel,street,buildingNumber,city) VALUES ('$fullName','$login','$password','$birthDate','$pesel','$street','$buildingNumber','$city')";
     $mysqli->query($query);
