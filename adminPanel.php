@@ -53,6 +53,10 @@
                         <input type="text" name="power">
                     </div>
                     <div class="inputBox">
+                        <label for="price">Cena za dzień:</label>
+                        <input type="text" name="price" pattern="\d*">
+                    </div>
+                    <div class="inputBox">
                         <label for="photo">Zdjęcie:</label>
                         <input type="file" name="photo">
                     </div>
