@@ -103,6 +103,11 @@
                 ?>
             </table>
         </div>
+        <div class="editRentals">
+            <?php
+            $all_rentals = $mysqli->query("SELECT * FROM ")
+            ?>
+        </div>
     </div>
 
 </body>
