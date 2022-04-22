@@ -1,292 +1,299 @@
 /* https://colorhunt.co/palette/557b8339aea9a2d5abe5efc1 */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
 }
 
 header {
-    background-color: #39AEA9;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border-bottom: 2px solid black;
-    -webkit-box-shadow: 0px 18px 63px -28px rgba(105, 105, 105, 1);
-    -moz-box-shadow: 0px 18px 63px -28px rgba(105, 105, 105, 1);
-    box-shadow: 0px 18px 63px -28px rgba(105, 105, 105, 1);
+  background-color: #39aea9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  -webkit-box-shadow: 0px 18px 63px -28px rgba(105, 105, 105, 1);
+  -moz-box-shadow: 0px 18px 63px -28px rgba(105, 105, 105, 1);
+  box-shadow: 0px 18px 63px -28px rgba(105, 105, 105, 1);
 }
 
 .logo {
-    padding: 20px;
+  padding: 20px;
 }
 
 nav {
-    display: flex;
-    flex-direction: row;
-    margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
 }
 
 .menuElement {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 15px;
 }
 
-.menuElement>a {
-    text-decoration: none;
-    color: black;
-    transition: all 0.3s;
-    font-size: 1.2em;
+.menuElement > a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+  font-size: 1.2em;
 }
 
-.menuElement>a:hover {
-    transform: scale(1.1);
+.menuElement > a:hover {
+  transform: scale(1.1);
 }
 
 .formBox {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .admin {
-    height: 500px !important;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 40px;
+  height: 500px !important;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 40px;
 }
 
-.admin>h2 {
-    text-align: center;
+.admin > h2 {
+  text-align: center;
 }
 
 .panel {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.formBox>h2 {
-    margin-bottom: 15px;
-    font-size: 1.7rem;
+.formBox > h2 {
+  margin-bottom: 15px;
+  font-size: 1.7rem;
 }
 
-.formBox>form {
-    display: flex;
-    flex-direction: row;
+.formBox > form {
+  display: flex;
+  flex-direction: row;
 }
 
 .inputBox,
 .submitBox {
-    margin: 5px;
-    padding: 10px 0px;
-    display: flex;
-    flex-direction: column;
+  margin: 5px;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
 }
 
-.inputBox>input {
-    padding: 5px 10px;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-top: 4px;
-    width: 300px;
+.inputBox > input {
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 4px;
+  width: 300px;
 }
 
 .submitBox {
-    align-items: bottom;
-    margin-top: 11px;
+  align-items: bottom;
+  margin-top: 11px;
 }
 
-.submitBox>input[type="submit"] {
-    background-color: #39AEA9;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px 10px;
+.submitBox > input[type="submit"] {
+  background-color: #39aea9;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
 .cars {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .car {
-    width: 400px;
-    padding: 20px;
-    border: 1px solid black;
-    border-radius: 15px;
-    margin: 20px;
-    -webkit-box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
-    box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
+  width: 400px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 20px;
+  -webkit-box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
 }
 
-.car>p {
-    margin: 10px;
+.car > p {
+  margin: 10px;
 }
 
-.car>h2 {
-    text-align: center;
+.car > h2 {
+  text-align: center;
 }
 
 .photo {
-    text-align: center;
+  text-align: center;
 }
 
-.photo>img {
-    width: 100%;
-    border-radius: 10px;
-    -webkit-box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
-    -moz-box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
-    box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
-    aspect-ratio: 5/4;
-    object-fit: cover;
+.photo > img {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px -15px rgba(66, 68, 90, 1);
+  aspect-ratio: 5/4;
+  object-fit: cover;
 }
 
 .priceNButton {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.priceNButton>p {
-    padding: 10px;
-    margin-top: 5px;
+.priceNButton > p {
+  padding: 10px;
+  margin-top: 5px;
 }
 
 .button {
-    background-color: #557B83;
-    border: 1px solid #557B83;
-    width: 150px;
-    border-radius: 5px;
-    text-align: center;
-    padding: 10px;
-    margin-top: 10px;
-    transition: all 0.3s;
-    float: right;
+  background-color: #557b83;
+  border: 1px solid #557b83;
+  width: 150px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  transition: all 0.3s;
+  float: right;
 }
 
 .button:hover {
-    border: 1px solid #557B83;
-    background-color: #fff;
-    color: #557B83;
+  border: 1px solid #557b83;
+  background-color: #fff;
+  color: #557b83;
 }
 
-.button:hover>a {
-    color: #557B83;
+.button:hover > a {
+  color: #557b83;
 }
 
-.button>a {
-    text-align: center;
-    text-decoration: none;
-    color: black;
+.button > a {
+  text-align: center;
+  text-decoration: none;
+  color: black;
 }
 
 .rentformBox {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 
 .left {
-    width: 50%;
+  width: 50%;
 }
 
-.left>h2 {
-    text-align: left;
-    margin-top: 20px;
-    padding-left: 20px;
+.left > h2 {
+  text-align: left;
+  margin-top: 20px;
+  padding-left: 20px;
 }
 
-.left>p {
-    padding: 10px;
+.left > p {
+  padding: 10px;
 }
 
 .right {
-    width: 30%;
-    padding: 50px;
+  width: 30%;
+  padding: 50px;
 }
 
 .singleCar {
-    text-align: left;
-    padding-left: 20px;
-    margin-top: 10px;
+  text-align: left;
+  padding-left: 20px;
+  margin-top: 10px;
 }
 
-.singleCar>img {
-    width: 100%;
-    aspect-ratio: 5/4;
-    object-fit: cover;
+.singleCar > img {
+  width: 100%;
+  aspect-ratio: 5/4;
+  object-fit: cover;
 }
 
 .info {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
-    margin-left: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  margin-left: 20px;
 }
 
-.info>p {
-    text-align: center;
+.info > p {
+  text-align: center;
 }
 
-.userInfo>p {
-    margin: 20px 0;
-    font-size: 1.2rem;
+.userInfo > p {
+  margin: 20px 0;
+  font-size: 1.2rem;
 }
 
-.userInfo>.button {
-    float: left;
+.userInfo > .button {
+  float: left;
 }
 
 .success {
-    color: darkgreen;
-    font-size: 0.9rem;
+  color: darkgreen;
+  font-size: 0.9rem;
 }
 
 .declined {
-    color: red;
+  color: red;
 }
 
 .deletingCar {
-    padding: 40px;
+  padding: 40px;
 }
 
-.deletingCar>table {
-    width: 400px;
-    border-collapse: collapse;
+.deletingCar > table {
+  width: 400px;
+  border-collapse: collapse;
+}
+.editRentals {
+  padding: 40px;
 }
 
+.editRentals > table {
+  width: 400px;
+  border-collapse: collapse;
+}
 td {
-    padding: 15px;
-    text-align: center;
+  padding: 15px;
+  text-align: center;
 }
 
 th {
-    border-bottom: 2px solid black;
-    padding: 15px;
+  border-bottom: 2px solid black;
+  padding: 15px;
 }
 
 .delete {
-    padding: 5px 10px;
-    background-color: #557B83;
-    border: 1px solid #557B83;
-    border-radius: 5px;
-    color: white;
-    transition: all 0.3s;
+  padding: 5px 10px;
+  background-color: #557b83;
+  border: 1px solid #557b83;
+  border-radius: 5px;
+  color: white;
+  transition: all 0.3s;
 }
 
 .delete:hover {
-    border: 1px solid #557B83;
-    background-color: #fff;
-    color: #557B83;
+  border: 1px solid #557b83;
+  background-color: #fff;
+  color: #557b83;
 }
