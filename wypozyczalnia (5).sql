@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 08 Kwi 2022, 16:49
--- Wersja serwera: 10.4.14-MariaDB
--- Wersja PHP: 7.4.9
+-- Czas generowania: 22 Kwi 2022, 09:22
+-- Wersja serwera: 10.4.21-MariaDB
+-- Wersja PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,8 +43,9 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`id`, `price`, `model`, `year`, `power`, `photo`, `reserved`) VALUES
-(2, 150, 'Fiat Bravo', '2007', 97, './upload/fiat.jpg', 1),
-(4, 150, 'Bmw', '2000', 150, './upload/625000f419ea8.jpg', 0);
+(17, 125, 'Mercedes S klasa', '2020', 0, './upload/626042cb06350.jpg', 1),
+(18, 654, 'BMW E90', '2025', 546, './upload/626042de9430b.png', 0),
+(19, 54, 'audi', '2005', 546, './upload/626042f136522.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -64,8 +65,8 @@ CREATE TABLE `rentals` (
 --
 
 INSERT INTO `rentals` (`id`, `car_id`, `user_id`) VALUES
-(1, 2, 5),
-(2, 2, 5);
+(9, 19, 5),
+(10, 17, 5);
 
 -- --------------------------------------------------------
 
@@ -92,11 +93,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fullName`, `login`, `password`, `birthDate`, `pesel`, `street`, `buildingNumber`, `city`, `user_type`) VALUES
-(3, 'Paweł Słota', 'pawelek212003', '123', '', '', '', '', '', 0),
-(4, 'Kacper Przełozny', 'kapri', 'kapri', '2022-04-19', '12345678912', 'Beblo', '69', 'Brak', 0),
-(5, 'admin', 'admin', 'admin', '', '', '', '', '', 2),
-(6, 'pracownik 1', 'pracownik 1', '', '', '', '', '', '', 1),
-(7, 'pracownik 2', 'pracownik 2', '', '', '', '', '', '', 1);
+(5, 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 2);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -121,20 +118,20 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
 -- AUTO_INCREMENT dla tabeli `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT dla tabeli `rentals`
 --
 ALTER TABLE `rentals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
