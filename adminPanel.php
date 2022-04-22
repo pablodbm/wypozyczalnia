@@ -20,7 +20,17 @@
         require "./backend/db_connect.php";
         $mysqli->query("DELETE FROM cars WHERE id='" . $_POST["id"] . "'");
     }
+    if (isset($_POST["return"])) {
+        require "./backend/db_connect.php";
+        $car_id = $_POST["car_id"];
+        $rental_id = $_POST["rental_id"];
 
+        $unReserveCar = "UPDATE cars SET reserved=0 WHERE id='$car_id'";
+        $mysqli->query($unReserveCar);
+
+        $deleteRental = "DELETE FROM rentals WHERE id='$rental_id'";
+        $mysqli->query($deleteRental);
+    }
     ?>
     <header>
         <div class="logo">
@@ -103,13 +113,42 @@
                 ?>
             </table>
         </div>
+
         <div class="editRentals">
-            <?php
-            $all_rentals = $mysqli->query("SELECT * FROM ")
-            ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Imie nazwisko</th>
+                        <th>Numer telefonu</th>
+                        <th>Model</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <?php
+
+                $all_rentals = $mysqli->query("SELECT users.fullName, users.phoneNumber, cars.model,rentals.id,cars.id as car_id FROM users, cars,rentals WHERE users.id=rentals.user_id AND cars.id=rentals.car_id");
+                $all_rentals_fetched = $all_rentals->fetch_all(MYSQLI_ASSOC);
+                // echo json_encode($all_rentals_fetched)
+                foreach ($all_rentals_fetched as $single_rental) {
+                    echo "<form action='#' method='POST'>";
+                    echo "<td>" . $single_rental["fullName"] . "</td>";
+                    echo "<td>" . $single_rental["phoneNumber"] . "</td>";
+                    echo "<td>" . $single_rental["model"] . "</td>";
+                    echo  "<input type='hidden' name='car_id' value='" . $single_rental["car_id"] . "'>";
+                    echo  "<input type='hidden' name='rental_id' value='" . $single_rental["id"] . "'>";
+                    echo "<td>";
+                    echo "<input type='submit' value='Zwróć' class='delete' name='return'>";
+                    echo "</td>";
+                    echo "</form>";
+
+                    echo "</tr>";
+                }
+
+                ?>
+            </table>
         </div>
     </div>
-
+    <!-- SELECT users.fullName, users.phoneNumber, cars.model FROM users, cars WHERE users.id=rentals.car_id AND cars.id=rentals.car_id -->
 </body>
 
 </html>
