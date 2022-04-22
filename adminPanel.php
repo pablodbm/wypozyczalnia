@@ -28,7 +28,7 @@
         </div>
         <nav>
             <div class="menuElement"><a href="./index.php">Strona główna</a></div>
-            <div class="menuElement"><a href="./addCar.php">Dodawanie auta</a></div>
+            <!-- <div class="menuElement"><a href="./addCar.php">Dodawanie auta</a></div> -->
             <?php if (isset($_SESSION["user_type"]) && $_SESSION["user_type"] == 2) : ?>
                 <div class="menuElement"><a href="./adminUsers.php">Zarządzanie pracownikami</a></div>
             <?php endif ?>

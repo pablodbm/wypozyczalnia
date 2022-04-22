@@ -19,6 +19,7 @@
             <div class="menuElement"><a href="./index.php">Strona główna</a></div>
             <div class="menuElement"><a href="./backend/logout.php">Wyloguj</a></div>
         </nav>
+        <button></button>
     </header>
     <main>
         <?php
@@ -71,7 +72,7 @@
                         // echo var_dump($single_car[0]);
                         echo "<br>";
                         $id = $single_car["car_id"];
-                        $car_id = $get_cars_fetched["id"];
+                        $car_id = $single_car["id"];
                         $cars_query = "SELECT * FROM cars WHERE id='$id' ";
                         $cars = $mysqli->query($cars_query);
                         $cars_fetched = $cars->fetch_all(MYSQLI_ASSOC);
