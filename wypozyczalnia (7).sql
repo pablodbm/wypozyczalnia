@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 22 Kwi 2022, 09:48
+-- Czas generowania: 22 Kwi 2022, 10:12
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.10
 
@@ -43,9 +43,9 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`id`, `price`, `model`, `year`, `power`, `photo`, `reserved`) VALUES
-(17, 125, 'Mercedes S klasa', '2020', 0, './upload/626042cb06350.jpg', 1),
+(17, 125, 'Mercedes S klasa', '2020', 0, './upload/626042cb06350.jpg', 0),
 (18, 654, 'BMW E90', '2025', 546, './upload/626042de9430b.png', 0),
-(19, 54, 'audi', '2005', 546, './upload/626042f136522.jpg', 0);
+(19, 54, 'audi', '2005', 546, './upload/626042f136522.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,7 @@ CREATE TABLE `rentals` (
 --
 
 INSERT INTO `rentals` (`id`, `car_id`, `user_id`) VALUES
-(11, 17, 5);
+(13, 19, 5);
 
 -- --------------------------------------------------------
 
@@ -93,7 +93,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fullName`, `login`, `password`, `birthDate`, `pesel`, `street`, `buildingNumber`, `city`, `phoneNumber`, `user_type`) VALUES
-(5, 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', '', 2);
+(5, 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', 'admin', '123456789', 2);
 
 --
 -- Indeksy dla zrzutów tabel
@@ -131,7 +131,7 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT dla tabeli `rentals`
 --
 ALTER TABLE `rentals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`

@@ -54,10 +54,10 @@
                         // echo "<p>Aktualny koszt: " . $car["price"] . "zł</p>"; // wyliczanie kosztów na podstawie ceny i długości wypożyczenia
                         echo "<div class='button'>";
             ?>
-                        <?php if (!isset($_SESSION["fullName"])) : ?>
-                            <a href="./loginForm.php">Zarezerwuj</a>
-                        <?php else : ?>
+                        <?php if ($get_cars_fetched["block"] == 0) : ?>
                             <a href="./backend/returnCar.php?car_id=<?php echo $id ?>&id=<?php echo $car_id; ?>">Oddaj</a>
+                        <?php else : ?>
+                            <a href="">Zablokowane</a>
                         <?php endif; ?>
                         <?php
                         echo "</div>";
@@ -85,13 +85,12 @@
                             echo "<img src='" . $car["photo"] . "' alt='fiat'>";
                             echo "</div>";
                             echo "<div class='priceNButton'>";
-                            // echo "<p>Aktualny koszt: " . $car["price"] . "zł</p>"; // wyliczanie kosztów na podstawie ceny i długości wypożyczenia
                             echo "<div class='button'>";
                         ?>
-                            <?php if (!isset($_SESSION["fullName"])) : ?>
-                                <a href="./loginForm.php">Zarezerwuj</a>
-                            <?php else : ?>
+                            <?php if ($single_car["block"] == 0) : ?>
                                 <a href="./backend/returnCar.php?car_id=<?php echo $id ?>&id=<?php echo $car_id; ?>">Oddaj</a>
+                            <?php else : ?>
+                                <a href="">Zablokowane</a>
                             <?php endif; ?>
             <?php
                             echo "</div>";
