@@ -9,6 +9,7 @@ $pesel = mysqli_real_escape_string($mysqli, $_POST["pesel"]);
 $street = mysqli_real_escape_string($mysqli, $_POST["street"]);
 $buildingNumber = mysqli_real_escape_string($mysqli, $_POST["buildingNumber"]);
 $city = mysqli_real_escape_string($mysqli, $_POST["city"]);
+$phoneNumber = mysqli_real_escape_string($mysqli, $_POST["phoneNumber"]);
 
 echo var_dump($_POST);
 $query = "SELECT * FROM users WHERE login='$login'";
@@ -19,7 +20,7 @@ if ($num_rows > 0) {
     $_SESSION["login_w_bazie"] = 0;
     // header("Location:./register_site.php");
 } else {
-    $query = "INSERT INTO users (fullName,login,password,birthDate,pesel,street,buildingNumber,city,user_type) VALUES ('$fullName','$login','$password','$birthDate','$pesel','$street','$buildingNumber','$city',1)";
+    $query = "INSERT INTO users (fullName,login,password,birthDate,pesel,street,buildingNumber,city,user_type,phoneNumber) VALUES ('$fullName','$login','$password','$birthDate','$pesel','$street','$buildingNumber','$city','$phoneNumber',1)";
     $mysqli->query($query);
 
 
