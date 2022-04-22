@@ -22,6 +22,5 @@ if ($num_rows > 0) {
     $query = "INSERT INTO users (fullName,login,password,birthDate,pesel,street,buildingNumber,city,phoneNumber) VALUES ('$fullName','$login','$password','$birthDate','$pesel','$street','$buildingNumber','$city','$phoneNumber')";
     $mysqli->query($query);
 
-
     header("Location:../loginForm.php?register=true");
 }
