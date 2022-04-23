@@ -297,3 +297,17 @@ th {
   background-color: #fff;
   color: #557b83;
 }
+.websiteInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.infoBox {
+  margin-top: 10px;
+}
+
+.infoBox > p {
+  margin: 10px 0;
+}

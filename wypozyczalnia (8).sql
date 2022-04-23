@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 22 Kwi 2022, 10:12
+-- Czas generowania: 23 Kwi 2022, 09:29
 -- Wersja serwera: 10.4.21-MariaDB
 -- Wersja PHP: 8.0.10
 
@@ -27,7 +27,6 @@ SET time_zone = "+00:00";
 -- Struktura tabeli dla tabeli `cars`
 --
 
-DROP TABLE IF EXISTS `cars`;
 CREATE TABLE `cars` (
   `id` int(11) NOT NULL,
   `price` int(11) NOT NULL DEFAULT 150,
@@ -44,7 +43,7 @@ CREATE TABLE `cars` (
 
 INSERT INTO `cars` (`id`, `price`, `model`, `year`, `power`, `photo`, `reserved`) VALUES
 (17, 125, 'Mercedes S klasa', '2020', 0, './upload/626042cb06350.jpg', 0),
-(18, 654, 'BMW E90', '2025', 546, './upload/626042de9430b.png', 0),
+(18, 654, 'BMW E90', '2025', 546, './upload/626042de9430b.png', 1),
 (19, 54, 'audi', '2005', 546, './upload/626042f136522.jpg', 1);
 
 -- --------------------------------------------------------
@@ -53,19 +52,20 @@ INSERT INTO `cars` (`id`, `price`, `model`, `year`, `power`, `photo`, `reserved`
 -- Struktura tabeli dla tabeli `rentals`
 --
 
-DROP TABLE IF EXISTS `rentals`;
 CREATE TABLE `rentals` (
   `id` int(11) NOT NULL,
   `car_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `block` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Zrzut danych tabeli `rentals`
 --
 
-INSERT INTO `rentals` (`id`, `car_id`, `user_id`) VALUES
-(13, 19, 5);
+INSERT INTO `rentals` (`id`, `car_id`, `user_id`, `block`) VALUES
+(16, 19, 5, 1),
+(17, 18, 5, 0);
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,6 @@ INSERT INTO `rentals` (`id`, `car_id`, `user_id`) VALUES
 -- Struktura tabeli dla tabeli `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `fullName` text NOT NULL,
@@ -131,7 +130,7 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT dla tabeli `rentals`
 --
 ALTER TABLE `rentals`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
