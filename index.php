@@ -34,7 +34,15 @@
         //wyswietlanie samochodów
         ?>
         <div class="cars">
-            
+            <div class="car websiteInfo">
+                <h2>Z nami zarezerwujesz samochód w 2 krokach</h2>
+                <div class="infoBox">
+                    <p>1. Utwórz konto i podaj prawdziwe dane.</p>
+                    <p>2. Zarezerwuj samochów.</p>
+                    <p>A my sami do Ciebie zadzwonimy!</p>
+                </div>
+
+            </div>
             <?php
             require "./backend/db_connect.php";
             $cars_query = "SELECT * FROM cars WHERE reserved=0";
