@@ -34,6 +34,7 @@
         //wyswietlanie samochodów
         ?>
         <div class="cars">
+            
             <?php
             require "./backend/db_connect.php";
             $cars_query = "SELECT * FROM cars WHERE reserved=0";

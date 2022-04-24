@@ -29,10 +29,10 @@
                     <label for="passwordRepeat">Powtórz hasło:</label>
                     <input type="password" name="passwordRepeat">
                 </div>
-                <div class="submitBox">
-                <label for="" style="visibility: hidden;">Submit</label>
-                <input type="submit" value="Zarejestruj się">
-            </div>
+                <div class="inputBox">
+                    <label for="city">Numer telefonu:</label>
+                    <input type="text" name="phoneNumber" pattern="([0-9]{9})">
+                </div>
             </div>
             <div class="column">
                 <div class="inputBox">
@@ -55,6 +55,10 @@
                     <label for="city">Miasto:</label>
                     <input type="text" name="city">
                 </div>
+                <div class="submitBox">
+                <label for="" style="visibility: hidden;">Submit</label>
+                <input type="submit" value="Zarejestruj się">
+            </div>
             </div>
         </form>
     </div>
